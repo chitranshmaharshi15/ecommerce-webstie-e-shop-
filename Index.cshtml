@@ -1,0 +1,461 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #D1D1E9;
+        }
+
+        .hello {
+            height: 80px;
+            width: 100%;
+            background: #2C2C54;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 80px;
+            padding-right: 40px;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+            .hello a {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+                .hello a:hover {
+                    color: #F5D6BA;
+                }
+
+        .Logout {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
+        .categories a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .categories i {
+            font-size: 30px; 
+        }
+        .categories {
+            margin-top: 100px;
+            padding-left: 20px;
+            position:relative;
+            bottom:75px;
+            
+        }
+        .hero {
+            /*            height: 280px;
+            width: 95%;
+            mapping: 10px;
+            padding: 10px;
+            border: 6px;
+            color:white;
+            box-sizing: border-box;
+            background-color:#2C2C54;
+            display:flex;
+            align-items:center;
+            position:relative;
+            left:40px;
+            border-radius:35px;*/
+            background: linear-gradient(135deg, #2C2C54, #474787);
+            
+            color: white;
+            padding: 20px 40px;
+            border-radius: 15px;
+            margin-bottom: 200px;
+            text-align: center;
+        }
+         .hero a {
+                color: mintcream;
+                font-size: 40px;
+                text-decoration: none;
+          
+            }
+         .hom{
+             color: white;
+             font-size:70px;
+         }
+        .hero p{
+            color:coral;
+            font-size:25px;
+            margin-bottom:20px
+
+        }
+        .hero button {
+            
+            
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+            .hero button a {
+                color: #2C2C54;
+            }
+            .hero button:hover {
+                background: #2C2C54;
+                
+            }
+            .hero button a:hover {
+                color: white;
+            }
+        .stcikers {
+            position: relative;
+            bottom: 200px;
+            left: 0;
+/*            width: 100%;
+            height:30px;*/
+            display: flex;
+            align-items: start;
+            justify-content:space-evenly;
+            z-index: 1;
+            padding: 20px 4px;
+            
+        }
+
+/*            .stcikers div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }*/
+
+            .stcikers img {
+                height: 250px;
+                width: auto;
+                transition: transform 0.3s;
+                
+               
+            }
+
+     .stcikers img:hover {
+     transform: scale(1.2);
+      
+      }
+        .selectc {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2C2C54;
+            margin-bottom: 15px
+        }
+
+        .msection {
+            height: 280px;
+            width: 300px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            border-radius: 20px;
+            gap:5px;
+        }
+
+        .image {
+            position: relative;
+            bottom: 20px;
+        }
+
+        .productGgrid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 80px;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2C2C54;
+            margin-bottom: 15px
+        }
+
+        .product {
+            color: black;
+            font-size: 20px;
+        }
+
+        .price {
+            color: #ee5a24;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .wishlist{
+            font-size:15px;
+            color: black;
+            background:white;
+            height: 30px;
+            width: 200px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            position:relative;
+            left:50px;
+            border-radius:5px;
+            border: 1px solid black;
+            
+            
+        }   
+        .wishlist i{
+            margin-right:5px;
+            
+        }
+            .wishlist:hover {
+/*                background-color: #ff6b6b;*/
+                border:2px solid black;
+            }
+/*            .wishlist i:hover {
+                background-color: #ff6b6b;
+            }*/
+     .hero button a{
+         margin:2px 2px 2px 2px;
+     }
+     .Logout i{
+        font-size:30px;
+     }
+
+        .logo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <section id="firstpage">
+        <img class="logo" src="/Content/images/logo2.jpg" alt="eShop Logo" height="80" />
+        <div class="hello">
+            <div class="home"><a href="#firstpage">HOME </a></div>
+            <div class="About"><a href="#">ABOUT</a></div>
+            <div class="help"><a href="#">HELP</a></div>
+            <div><a href="/Login_Page/Details/@Session["user_id"]">PROFILE</a></div>
+            <div>
+            </div>
+            <div class="Logout"><a href="/Login_Page/Login"><i class="bi bi-box-arrow-right"></i></a></div>
+        </div>
+        <div class="categories">
+            <a href="#">
+                <i class="bi bi-grid-3x2-gap-fill"></i>
+            </a>
+        </div>
+
+        <div class="hero">
+            <div class="hom">
+                <a> 🛒Welcome to e-shop </a>
+                <p> Best deals, best prices — all in one place!</p>
+                <button> <a href="/Login_page/Category" style="text-decoration:none;">Select Category </a> </button>
+               
+            </div>
+
+        </div>
+        <div class="stcikers">
+            <div> <img src="/Content/images/pre.png" alt="eShop Logo" /> </div>
+            <div> <img src="/Content/images/heart.jpg" alt="eShop Logo" /> </div>
+            <div><a href="#female"> <img src="/Content/images/wo.png" alt="eShop Logo" /> </a> </div>
+            <div> <a href="#male"> <img src="/Content/images/kris.png" alt="eShop Logo" /> </a> </div>
+            <div> <a href="#electronic"> <img src="/Content/images/devices.png" alt="eShop Logo" /> </a> </div>
+
+        </div>
+    </section>
+    @*<div class="product">*@
+    @*<div class="mwk">
+            <div class="m">
+                <a href="#mens-section" style="text-decoration:none; color: white;">Men</a>
+            </div>
+            <div class="m">Women</div>
+            <div class="m">Kids</div>
+        </div>
+        <div id="mens-section">
+            <h1>Men's Section</h1>*@
+
+
+    <section class="productGgrid" id="male">
+
+        <div class="msection">
+
+            <img src="~/Content/images/boyshoes.jpg" alt="shoes" height=160>
+            <div class="product">Nike Shoes</div>
+            <div class="price">₹5,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/sunglass.jpg" alt="shoes" height=160>
+            <div class="product">Ray-Ban</div>
+            <div class="price">₹2,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/boytshirt.jpg" alt="tshirt" height=160>
+            <div class="product">ZUDIO</div>
+            <div class="price">₹4,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/ps5.jpg" alt="ps5" height=160>
+            <div class="product">PS5</div>
+            <div class="price">₹94,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/boywallet.jpg" alt="boywallet" height=160>
+            <div class="product">Allen Solly</div>
+            <div class="price">₹1,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/ps5.jpg" alt="ps5" height=160>
+            <div class="product">PS5</div>
+            <div class="price">₹4,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+
+    </section>
+
+
+    <section class="productGgrid" id="female">
+
+
+        <div class="msection">
+
+            <img src="~/Content/images/purse.jpg" alt="shoes" height=160>
+            <div class="product">Allen Solly</div>
+            <div class="price">₹5,400</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/jeans.jpg" alt="shoes" height=160>
+            <div class="product">Roadster</div>
+            <div class="price">₹8,999</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/lipstick.jpg" alt="tshirt" height=160>
+            <div class="product">MAMAEARTH</div>
+            <div class="price">₹1,202</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/tshirt.jpg" alt="ps5" height=160>
+            <div class="product">ZARA</div>
+            <div class="price">₹9,999</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/heels.jpg" alt="boywallet" height=160>
+            <div class="product">JM Looks</div>
+            <div class="price">₹4,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection" >
+
+            <img src="~/Content/images/eyeliner.jpg" alt="ps5" height=160>
+            <div class="product">NYKA</div>
+            <div class="price">₹999</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+
+    </section>
+
+    <section class="productGgrid" id="electronic">
+
+
+        <div class="msection">
+
+            <img src="~/Content/images/iphone.jpg" alt="shoes" height=160>
+            <div class="product">IPHONE 16</div>
+            <div class="price">₹85,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/buds.jpg" alt="shoes" height=160>
+            <div class="product">SAMSUNG R5</div>
+            <div class="price">₹6,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/speaker.jpg" alt="tshirt" height=160>
+            <div class="product">BOSE 1</div>
+            <div class="price">₹1,24,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/projector.jpg" alt="ps5" height=160>
+            <div class="product">ZEBRONICS CV</div>
+            <div class="price">₹11,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/laptop.jpg" alt="boywallet" height=160>
+            <div class="product">ASUS 2V</div>
+            <div class="price">₹64,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+        <div class="msection">
+
+            <img src="~/Content/images/camera.jpg" alt="ps5" height=160>
+            <div class="product">CANON X-32</div>
+            <div class="price">₹92,000</div>
+            <button class="wishlist"> <i class="bi bi-heart"></i> Wishlist</button>
+
+        </div>
+
+       
+
+
+
+
+</body>
+</html>

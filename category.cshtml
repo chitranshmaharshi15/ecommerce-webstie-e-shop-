@@ -1,0 +1,290 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #D1D1E9;
+        }
+
+        .hello {
+            height: 80px;
+            width: 100%;
+            background: linear-gradient(135deg, #2C2C54, #474787);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 80px;
+            padding-right: 40px;
+            box-sizing: border-box;
+        }
+
+            .hello a {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+                .hello a:hover {
+                    color: #F5D6BA;
+                }
+
+        .Logout {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
+
+        .categories a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .categories i {
+            font-size: 30px;
+        }
+
+        .categories {
+            margin-top: 100px;
+            padding-left: 20px;
+            position: relative;
+            bottom: 75px;
+        }
+
+        .hero {
+            /*            height: 280px;
+            width: 95%;
+            mapping: 10px;
+            padding: 10px;
+            border: 6px;
+            color:white;
+            box-sizing: border-box;
+            background-color:#2C2C54;
+            display:flex;
+            align-items:center;
+            position:relative;
+            left:40px;
+            border-radius:35px;*/
+            background: linear-gradient(135deg, #2C2C54, #474787);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+            .hero a {
+                color: mintcream;
+                font-size: 40px;
+                text-decoration: none;
+            }
+
+        .hom {
+            color: white;
+            font-size: 70px;
+        }
+
+        .hero p {
+            color: coral;
+            font-size: 35px;
+            margin-bottom: 20px
+        }
+
+        .hero button {
+            background: button;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            .hero button a {
+                color: #2C2C54;
+            }
+
+            .hero button:hover {
+                background: #2C2C54;
+            }
+
+            .hero button a:hover {
+                color: white;
+            }
+
+        .mwk {
+            font-size: 50px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            align-items:center;
+            justify-content:center;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .m {
+            height: 180px;
+            width: 400px;
+            background: #2C2C54;
+            color: white;
+            border-radius: 30px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-decoration:none;
+
+            
+        }
+        .selectc {
+            font-size: 24px;
+            font-weight:bold;
+            color: #2C2C54;
+            margin-bottom: 15px
+        }
+        .msection {
+            height:280px;
+            width:300px;
+            background:white;
+            display:flex;
+            flex-direction:column;
+            text-align:center;
+            justify-content:center;
+            border-radius:20px;
+            gap:10px;
+            
+        }
+       .image{
+           position:relative;
+           bottom:20px;
+       }
+        .productGgrid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 80px;
+            justify-content:center;
+            padding: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2C2C54;
+            margin-bottom: 15px
+        }
+        .product{
+            color:black;
+            font-size:20px;
+
+        }
+        .price {
+            color: #ee5a24;
+            font-weight: bold;
+            font-size:18px;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="hello">
+        <div class="home"><a href="#">Home</a></div>
+        <div class="About"><a href="#">About</a></div>
+        <div class="help"><a href="#">Help</a></div>
+        <div class="Logout"><a href="/Login_Page/Login">Logout</a></div>
+    </div>
+
+    <div class="categories">
+        <a href="#">
+            <i class="bi bi-grid-3x2-gap-fill"></i>
+        </a>
+    </div>
+
+    <div class="hero">
+        <div class="hom">
+            🛒Welcome to e-com</a>
+            <p> Best deals, best prices — all in one place!</p>
+            <button> <a href="/Login_page/Index" style="text-decoration:none;">Go Home </a> </button>
+        </div>
+
+    </div>
+    <div class="selectc">Select Category</div>
+    
+    <div class="product">
+        <div class="mwk">
+            <div class="m">
+                <a href="#mens-section" style="text-decoration:none; color: white;" >Men</a>
+            </div>
+            <div class="m">Women</div>
+            <div class="m">Kids</div>
+        </div>
+        <div id="mens-section">
+            <h1>Men's Section</h1>
+           
+        </div>
+            <div class="productGgrid">
+
+
+                <div class="msection">
+
+                    <img src="~/Content/images/boyshoes.jpg" alt="shoes" height=160>
+                    <div class="product">Nike Shoes</div>
+                    <div class="price">₹5,000</div>
+
+                </div>
+                <div class="msection">
+
+                    <img src="~/Content/images/sunglass.jpg" alt="shoes" height=160>
+                    <div class="product">Ray-Ban</div>
+                    <div class="price">₹4,000</div>
+
+                </div>
+                <div class="msection">
+
+                    <img src="~/Content/images/boytshirt.jpg" alt="tshirt" height=160>
+                    <div class="product">ZUDIO</div>
+                    <div class="price">₹4,000</div>
+
+                </div>
+                <div class="msection">
+
+                    <img src="~/Content/images/ps5.jpg" alt="ps5" height=160>
+                    <div class="product">PS5</div>
+                    <div class="price">₹4,000</div>
+
+                </div>
+                <div class="msection">
+
+                    <img src="~/Content/images/boywallet.jpg" alt="boywallet" height=160>
+                    <div class="product">PS5</div>
+                    <div class="price">₹4,000</div>
+
+                </div>
+                <div class="msection">
+
+                    <img src="~/Content/images/ps5.jpg" alt="ps5" height=160>
+                    <div class="product">PS5</div>
+                    <div class="price">₹4,000</div>
+
+                </div>
+                <div class="msection">
+                    <img src="~/Content/images/watch.jpg" alt="ps5" height=160>
+                    <div class="product">PS5</div>
+                    <div class="price">₹4,000</div>
+
+                </div>
+
+            </div>
+
+        </div>
+   
+</body>
+</html>

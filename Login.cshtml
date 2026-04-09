@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<style>
+
+    body {
+        background-image: url("/Content/images/kishu.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        margin: 0;
+    }
+    .move {
+/*        display:flex;
+        flex-direction:column;
+        align-items:center;*/
+        background-color: rgba(255, 255, 255, 0.15);      
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+        padding: 48px 40px;
+        width: 420px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        position:relative;
+        left:650px;
+        top:35px;
+
+    }
+       
+    label {
+        color: black;
+        font-size: 18px;
+        margin-bottom: 6px;
+        display: block;
+
+    }
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid rgba(255,255,255,0.4);
+        border-radius: 8px;
+        background: rgba(255,255,255,0.2);
+        color: black;
+        font-size: 15px;
+        margin-bottom: 20px;
+        outline: none;
+        transition: border 0.3s;
+        
+        
+    }
+    button[type="submit"] {
+        width: 100%;
+        padding: 13px;
+        background-color: #7c3aed;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        letter-spacing: 1px;
+    }
+        button[type="submit"]:hover {
+            background-color: #a855f7;
+            
+        }
+
+       a{
+           text-decoration:none;
+       }
+
+       p a:hover{
+           text-decoration:blink;
+       }
+       .intext{
+           color:black;
+       }
+       .logo{
+           position:relative;
+           top:30px;
+           left:800px;
+       }
+</style>
+
+<div>
+  <img class="logo" src="/Content/images/yess.jpg" alt="eShop Logo" height="80" />
+</div>
+
+@using (Html.BeginForm("Login", "Login_Page", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+<div class="move" id="okay">
+    <div >
+        <label>Username</label><br />
+        <input class="intext" type="text" name="user_name" placeholder="Enter Username" required autocomplete="off"  />
+    </div>
+
+    <br />
+
+    <div >
+        <label>Password</label><br />
+        <input class="intext" type="password" name="user_password" placeholder="Enter Password" required autocomplete="off"/>
+    </div>
+
+    <br />
+
+    <div class="button">
+        <button type="submit">Login</button>
+    </div>
+
+    <br />
+
+    <p style="color:red">
+        @ViewBag.Error
+    </p>
+
+
+    <p>New User? <a href="/Login_Page/Register">Register Here</a></p>
+    <p><a href="/Login_Page/Details">Forgot Password</a></p>
+</div>
+}
+

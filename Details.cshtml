@@ -1,0 +1,103 @@
+﻿@*@model ecom.Login_Page
+
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <h2>Details</h2>
+
+    <div>
+        <h4>Login_Page</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user_name)
+            </dt>
+
+            <dd>
+                @Html.TextBoxFor(m => m.user_name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user_password)
+            </dt>*@
+
+@*<dd>
+        @Html.DisplayFor(model => model.user_password)
+    </dd>*@
+@*<div class="button">
+                <button type="submit">Login</button>
+            </div>
+        </dl>
+    </div>
+    <p>*@
+@*@Html.ActionLink("Edit", "Edit", new { id = Model.user_id }) |*@
+@*@Html.ActionLink("Back to List", "Index")*@
+@*</p>*@
+
+@{
+    ViewBag.Title = "Forgot Password";
+}
+<style>
+    body {
+        background: #D1D1E9;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        margin: 0;
+    }
+    .mov {
+        background-color: rgba(255, 255, 255, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+        padding: 20px 15px;
+        width: 200px;
+        height: 40%;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        position: relative;
+        left: 650px;
+        top: 20px;
+    }
+</style>
+
+@if (ViewBag.Error != null)
+{
+    <p>@ViewBag.Error</p>
+}
+@if (ViewBag.UsernameVerified == null)
+{
+    using (Html.BeginForm("Details", "Login_Page", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+<div class="mov">
+    <label>Username</label>
+    <input type="text" name="email" placeholder="Enter username" />
+    <button type="submit">Verify</button>
+</div>
+    }
+
+
+}
+else
+{
+    <p>Username verified! Enter New Password</p>
+
+    using (Html.BeginForm("UpdatePassword", "Login_Page", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="email" value="@ViewBag.VerifiedUsername" />
+
+        <label>New Password</label>
+        <input type="password" name="new_password" />
+
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" />
+
+        <button type="submit">Update</button>
+    }
+}
+
+<a href="@Url.Action("Login", "Login_Page")">Back to Login</a>
